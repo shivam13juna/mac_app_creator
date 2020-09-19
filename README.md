@@ -29,4 +29,24 @@ Distribute your Shell script as an application
 4. Ensure main.command is executable `chmod a+x main.command`
 5. Send
 
+## PS: vpn_yes is a default app for how you might bypass that manual login on anyconnect secure mobility, vpn-no just stops what vpn_yes enables
+
+I finally found a working solution. I'm using Anyconnect VPN secure mobility 4.8
+
+We can use this to connect to Anyconnect with terminal
+
+To connect:
+
+printf 'USERNAME\nPASSWORD\ny' | /opt/cisco/anyconnect/bin/vpn -s connect HOST
+
+Replace USERNAME, PASSWORD, and HOST. The \ny at the end is to accept the login banner - this is specific to my host.
+
+Note the single quotes ' instead of double quotes " - this is because double quotes tell Bash to interpret certain characters within strings, such as exclamation marks, as Bash history commands. Double quotes will make this command fail with an "event not found" error if the password contains an exclamation mark. Single-quoted strings pass exclamation marks along without interpreting them.
+
+To disconnect:
+
+/opt/cisco/anyconnect/bin/vpn disconnect
+
+I've made an alias to bash_profile to those commands
+
 
