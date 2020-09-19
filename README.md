@@ -50,3 +50,8 @@ To disconnect:
 I've made an alias to bash_profile to those commands
 
 
+
+## Additional Files
+
+* LiteIcon.app is for changing app on your local computer
+* Iconmaker.app just creates icon of all shapes (as listed on apple's design site) from your default app. Just drag your png file to the iconmaker.app. It'll create iconset folder
