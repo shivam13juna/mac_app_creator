@@ -11,10 +11,8 @@ BASEPATH=${FILEPATH%/*/*/*}
 echo $BASEPATH
 
 # TODO
-printf "y\n2\nusername\npassword\ny" | /opt/cisco/anyconnect/bin/vpn -s connect HOST
+printf "y\n3\n<username>\n<password>\ny" | /opt/cisco/anyconnect/bin/vpn -s connect HOST
 # Edit info.plist for copyright and organisation
 # Replace cmd.icns
 # Insert code
-
-
 exit 0
